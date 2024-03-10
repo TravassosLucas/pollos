@@ -1,0 +1,339 @@
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.custom-font {
+    font-family: "Caveat", cursive;
+    color: rgb(129, 29, 29)
+}
+
+
+.center{
+    max-width: 1100px;
+    padding: 0 2%;
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header{
+    background-color: white;
+    padding: 20px 0 ;
+    position: fixed; 
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    top: 0; 
+    width: 100%; 
+    background-color: white;
+    padding: 20px 0;
+    z-index: 1000;
+
+}
+ 
+
+body{
+    padding-top: 80px; 
+    scroll-behavior: smooth; /* Adiciona uma transição suave ao rolar */
+
+
+}
+
+
+
+
+.logo h1{
+       color: rgb(129, 29, 29);
+}
+    
+
+.menu{
+  text-align: right;
+  margin-left: auto;
+
+}
+
+.menu a{
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+    transition: 1s;
+}
+
+.menu a:hover{
+    color: gold;
+}
+
+.menu .btn-menu{
+    background-color: gold;
+    display: inline-block;
+    padding: 4px 10px;
+    color: black;
+    border-radius: 8px;
+
+}
+
+.menu .btn-menu:hover{
+    background-color: goldenrod;
+    color: black;
+}
+
+.banner{
+    background-image: url("./img/background\ fritas.jpg");
+    align-items: center;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 22em;
+    justify-content: center;
+    margin-top: 1px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.banner--overlay {
+    align-items: center;
+    display: flex;
+    position: relative; 
+    max-height: 500px;
+    display: inline-block; 
+    cursor: pointer; 
+    text-decoration: none; 
+}
+
+.banner--overlay img {
+    width: auto;
+    height: 300px; 
+}
+
+
+/* cel */
+@media screen and (max-width: 896px) {
+    .center {
+        padding: 0 5%;
+    }
+
+    .menu {
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    .menu a {
+        margin: 0 10px;
+    }
+    
+    .logo h1 {
+        text-align: center;
+        margin: 10px 0; 
+    }
+
+    .banner--overlay img {
+        margin-left: 50px;
+        max-width: 80%; 
+    }
+}
+/* cel */
+
+
+
+.card-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    margin: 0;
+    padding: 0;
+}
+
+.card-title {
+    font-size: 50px;
+    text-align: center;
+    margin: 0; /* Adicione esta linha */
+    padding: 0; /* Adicione esta linha */
+}
+
+
+.card-title h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 100px;
+
+}
+
+.subtitulo{
+    font-size: 60px;
+    margin-top: 3px;
+}
+
+.card {
+    flex: 1 1 200px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+    max-width: 250px;
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.card-img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease; 
+}
+
+.card-price {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.botao {
+    text-align: center;
+    align-items: center;
+    padding: 2px 10px;
+    font-size: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(129, 29, 29);
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: goldenrod;
+}
+
+.subtitulo02{
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+
+.videohome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.videohome video {
+    max-width: 90000px; 
+    height: 100%;
+    margin: 0; 
+    padding: 0; 
+    margin-top: 25px;
+    
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.imgsobre {
+    margin-left: 40px;
+}
+
+.imgsobre2 {
+    margin-right: 40px;
+    border-radius: 505px;
+}
+
+.container img {
+    border-radius: 500px;
+    margin-bottom: 20px;
+}
+
+.textsobre {
+    text-align: justify;
+    max-width: 50%;
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 896px) {
+    .container {
+        flex-direction: column; /* Muda a direção da flexão para coluna em telas menores */
+    }
+
+    
+    .textsobre, .imgsobre {
+        flex: 1 1 100%; /* Faz com que o texto e a imagem ocupem 100% da largura em telas menores */
+    }
+
+    .textsobre{
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .videohome {
+        width: 100%;
+        max-width: 100%; /* Garante que o vídeo não exceda o tamanho do contêiner pai */
+    }
+    
+    .videohome video {
+        width: 100%; /* Torna o vídeo responsivo */
+        height: auto; /* Permite que a altura seja ajustada automaticamente para manter a proporção */
+    }
+    
+
+}
+
+
+
+.cart-container, .store-container {
+    padding: 20px;
+}
+
+.cart, .store {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.item {
+    margin-bottom: 20px;
+}

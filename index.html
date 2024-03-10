@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+
+    <title>Los Pollos Hermanos ™</title>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="center">
+
+
+            <div class="logo">
+                <h1> <span class="custom-font"> LOS POLLOS HERMANOS ™️ </span> </h1>
+            </div><!--logo-->
+
+
+
+
+
+            <div class="menu">
+
+
+                <a href="#sobre"> SOBRE </a>
+
+                <a href="#cardapio"> CARDÁPIO </a>
+
+                <a href="" class="btn-menu"> COMPRAR </a>
+
+
+            </div><!--menu-->
+        </div><!--center-->
+
+        <div class="cart-container">
+        <div class="cart">
+            <h2>Carrinho de Compras</h2>
+            <ul id="cart-items"></ul>
+            <div id="cart-total">Total: R$ 0.00</div>
+            <button id="checkout-btn" onclick="checkout()">Finalizar Compra</button>
+        </div>
+    </div>
+
+
+
+    </header>
+
+
+    <section class="banner">
+        <div class="banner--overlay">
+            <a href="https://www.instagram.com/eatlospolloshermanos/"> <img src="./img/lph-logos.png"
+                    alt="logotipo do pollos porra"> </a>
+        </div><!--banner--overlay-->
+    </section><!--banner-->
+
+
+
+
+    <section id="sobre">
+
+
+        <br>
+        <br>
+        <div class="wrapper">
+            <div class="card-title">
+                <h1 class="titulogeral"><span class="custom-font"> SOBRE NÓS </span></h1>
+            </div>
+        </div><!--Wrappper-->
+
+
+
+        <div class="container">
+            <div class="imgsobre"> <img src="img/1920.png" width="auto" height="300px" class="imgsobre2"></div>
+            <!--imgsobre-->
+            <div class="textsobre">
+
+                <div class="primeirotext">
+
+
+                    <p>No calor dos anos 1920, nasceu uma joia culinária em Albuquerque, o Pollos Hermanos.
+                        Fundado por um empreendedor visionário de origens hispânicas, este modesto estabelecimento
+                        logo se destacou como um ponto de referência na cena gastronômica local. Com sua abordagem
+                        inovadora para o preparo do frango e seu compromisso com a autenticidade, o Pollos Hermanos
+                        conquistou os paladares mais exigentes da época.</p>
+
+                </div>
+
+            </div><!--textsobre01-->
+        </div><!--Container-->
+
+
+
+        <div class="container">
+
+
+            <div class="textsobre">
+
+                <p>O Pollos Hermanos, sob a administração meticulosa de Gus Fring,
+                    continua a ser uma referência em Albuquerque para os amantes da gastronomia.
+                    Com sua reputação consolidada como um destino de excelência culinária, o
+                    restaurante mantém seus altos padrões de qualidade, oferecendo aos clientes
+                    seus famosos pratos de frango preparados com maestria. Apesar de sua fachada
+                    impecável, seu passado sombrio permanece oculto, enquanto o Pollos Hermanos mantém sua posição
+                    como um símbolo de estabilidade na comunidade.</p>
+            </div><!--textsobre02-->
+            <div class="imgsobre"> <img src="img/tomou bala.jpg" width="auto" height="300px"></div><!--imgsobre-->
+
+
+
+
+
+        </div><!--Container-->
+
+
+
+        <br>
+        <br>
+        <div class="videohome">
+
+            <video src="img/los pollos hermanos original ad.mp4" controls autoplay muted autoloop></video>
+
+        </div>
+
+    </section>
+
+
+    <br>
+    <br>
+    <br>
+    <br><br>
+
+    <section id="cardapio"><!--cardapio-->
+
+        <br>
+        <br>
+        <br>
+
+        <div class="wrapper">
+            <div class="card-title">
+                <h1 class="titulogeral"><span class="custom-font">CARDÁPIO</span></h1>
+                <h1 class="subtitulo"><span class="custom-font">Pratos</span></h1>
+            </div>
+        </div><!--Wrappper-->
+
+
+
+        <div class="card-container">
+
+            <div class="card">
+                <h2> HAMBURGÃO SUCULENTO</h2>
+                <img src="./img/HAMBURGUERZIN01.jpg" alt="" class="card-img">
+                <div class="card-price">
+                    <h2>R$ 29,99</h2>
+                </div>
+                <button class="botao"> 🛒 </button>
+            </div>
+
+            <div class="card">
+                <h2> HAMBURGÃO ACEBOLADO</h2>
+                <img src="img/HAMBURGUERZIN02.jpg" alt="" class="card-img">
+                <div class="card-price">
+                    <h2>R$ 29,99</h2>
+                </div>
+                <button class="botao" onclick="addItem('Item 1', 10.00)" > 🛒 </button>
+            </div>
+
+            <div class="card">
+                <h2> BALDE DE FRANGO </h2>
+                <img src="./img/frango frito.jfif" alt="" class="card-img">
+                <div class="card-price">
+                    <h2>R$ 14,99</h2>
+                </div>
+                <button class="botao"> 🛒 </button>
+            </div>
+
+
+            <div class="card">
+                <h2> SAQUINHO DE ISCA </h2>
+                <img src="./img/SAQUINHO.jpg" alt="" class="card-img">
+                <div class="card-price">
+                    <h2>R$ 57,85</h2>
+                </div>
+                <button class="botao"> 🛒 </button>
+            </div>
+
+        </div><!--pratos-->
+
+
+
+        <div class="wrapper">
+            <div class="subtitulo02">
+                <h1 class="subtitulo"><span class="custom-font">Bebidas</span></h1>
+            </div>
+        </div>
+        </div><!--Wrappper02-->
+
+
+
+        <div class="card-container">
+
+            <div class="card">
+                <h2> ÁGUA GELADA COM LIMÃO </h2>
+                <img src="./img/SODA.png" alt="" class="card-img">
+                <div class="card-price">
+                    <h2>R$ 50,00</h2>
+                </div>
+                <button class="botao"> 🛒 </button>
+            </div>
+
+            <div class="card">
+                <h2> ÁGUA NA XÍCARA TOPZAO</h2>
+                <img src="img/café.jfif" alt="" class="card-img">
+                <div class="card-price">
+                    <h2>R$ 5,00 </h2>
+                </div>
+                <button class="botao"> 🛒 </button>
+            </div>
+
+            <div class="card">
+                <h2> CERVEJA NO COPO </h2>
+                <img src="img/refrigerante.jfif" alt="" class="card-img">
+                <div class="card-price">
+                    <h2>R$ 2,50 </h2>
+                </div>
+                <button class="botao"> 🛒 </button>
+            </div>
+
+            <div class="card">
+                <h2> ÁGUA COM PIMENTA </h2>
+                <img src="img/A PIMENTADO.png"" alt="" class=" card-img">
+                <div class="card-price">
+                    <h2>R$ 2,50 </h2>
+                </div>
+                <button class="botao"> 🛒 </button>
+            </div>
+
+
+
+        </div><!--bebidas-->
+
+
+
+
+        <div class="wrapper">
+            <div class="subtitulo02">
+                <h1 class="subtitulo"><span class="custom-font">Sobremesas</span></h1>
+            </div>
+        </div>
+        </div><!--Wrappper02-->
+
+
+
+        <div class="card-container">
+
+            <div class="card">
+                <h2> ÁGUA COM AÇUCAR </h2>
+                <img src="./img/SODA.png" alt="" class="card-img">
+                <div class="card-price">
+                    <h2>R$ 70,00</h2>
+                </div>
+                <button class="botao"> 🛒 </button>
+            </div>
+
+            <div class="card">
+                <h2> BALDE DE SORVETE</h2>
+                <img src="img/balde de sorvete.webp" alt="" class="card-img">
+                <div class="card-price">
+                    <h2>R$ 28,00 </h2>
+                </div>
+                <button class="botao"> 🛒 </button>
+            </div>
+
+            <div class="card">
+                <h2> DOCINHO AZUL MARAVILHOSO </h2>
+                <img src="img/DOCE AZUL.png" alt="" class="card-img">
+                <div class="card-price">
+                    <h2>R$ 2,50 </h2>
+                </div>
+                <button class="botao"> 🛒 </button>
+            </div>
+
+            <div class="card">
+                <h2> DOCINHO AZUL + SORVETAO </h2>
+                <img src="img/DOCE-SORVETE.png"" alt="" class=" card-img">
+                <div class="card-price">
+                    <h2>R$ 30,50 </h2>
+                </div>
+                <button class="botao"> 🛒 </button>
+            </div>
+
+
+
+        </div><!--bebidas-->
+
+
+
+
+    </section><!--cardapio-->
+
+
+
+
+
+
+
+
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
