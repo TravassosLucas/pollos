@@ -295,12 +295,12 @@ section {
 
 @media only screen and (max-width: 896px) {
     .container {
-        flex-direction: column; /* Muda a direção da flexão para coluna em telas menores */
+        flex-direction: column;
     }
 
     
     .textsobre, .imgsobre {
-        flex: 1 1 100%; /* Faz com que o texto e a imagem ocupem 100% da largura em telas menores */
+        flex: 1 1 100%; 
     }
 
     .textsobre{
@@ -310,12 +310,12 @@ section {
 
     .videohome {
         width: 100%;
-        max-width: 100%; /* Garante que o vídeo não exceda o tamanho do contêiner pai */
+        max-width: 100%; 
     }
     
     .videohome video {
-        width: 100%; /* Torna o vídeo responsivo */
-        height: auto; /* Permite que a altura seja ajustada automaticamente para manter a proporção */
+        width: 100%; 
+        height: auto; 
     }
     
 
@@ -336,4 +336,48 @@ section {
 
 .item {
     margin-bottom: 20px;
+}
+
+/* Estilo para o botão do carrinho */
+.cart-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+/* Estilo para o painel do carrinho */
+.cart-panel {
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+/* Estilo para os itens do carrinho */
+#cart-items li {
+    margin-bottom: 10px;
+}
+
+/* Estilo para o botão Finalizar Compra */
+#checkout-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#checkout-btn:hover {
+    background-color: #0056b3;
 }

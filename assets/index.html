@@ -50,14 +50,17 @@
             </div><!--menu-->
         </div><!--center-->
 
-        <div class="cart-container">
-        <div class="cart">
+
+        <!-- Botão do carrinho no canto superior direito -->
+        <div id="cart-toggle" class="cart-toggle">🛒</div>
+
+        <!-- Elemento do carrinho que aparece quando clicado -->
+        <div id="cart-panel" class="cart-panel">
             <h2>Carrinho de Compras</h2>
             <ul id="cart-items"></ul>
             <div id="cart-total">Total: R$ 0.00</div>
             <button id="checkout-btn" onclick="checkout()">Finalizar Compra</button>
         </div>
-    </div>
 
 
 
@@ -179,7 +182,7 @@
                 <div class="card-price">
                     <h2>R$ 29,99</h2>
                 </div>
-                <button class="botao" onclick="addItem('Item 1', 10.00)" > 🛒 </button>
+                <button class="botao" onclick="addItem('Item 1', 10.00)"> 🛒 </button>
             </div>
 
             <div class="card">
