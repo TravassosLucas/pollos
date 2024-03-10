@@ -69,10 +69,46 @@
     <div id="mensagem-confirmacao" class="mensagem-confirmacao">
         <h1 class="custom-font">Pedido confirmado!</h1>
     </div>
-    
+
 
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
+
+        
+// Adicionamos um evento de clique ao botão de fechar a sacola
+$("#fechar-sacola").click(function() {
+    // Ocultamos a sacola de compras
+    $("#carrinho").hide();
+});
+
+      // Função para adicionar item ao carrinho
+function addItem(descricao, preco) {
+    // Recupera o carrinho do localStorage
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  
+    // Adiciona o novo item ao carrinho
+    carrinho.push({ descricao: descricao, preco: preco });
+  
+    // Atualiza o carrinho no localStorage
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  
+    // Exibe o carrinho de compras
+    $("#carrinho").show();
+  
+    // Atualiza a exibição do carrinho
+    exibirCarrinho();
+}
+
+// Adicionamos um evento de clique aos botões do cardápio para abrir o carrinho
+$(document).ready(function() {
+    console.log("Botões do cardápio:", $(".botao")); // Verifica se os botões do cardápio estão sendo selecionados corretamente
+    $(".botao").click(function() {
+        // Mostramos o carrinho de compras
+        $("#carrinho").show();
+    });
+});
+
+
         $(document).ready(function () {
 
             const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
@@ -165,14 +201,18 @@
             $("#carrinho").toggle();
         });
 
-$("button").click(function() {
-    if ($(this).text() === "Realizar pedido") {
-        $("#mensagem-confirmacao").fadeIn();
-        setTimeout(function() {
-            $("#mensagem-confirmacao").fadeOut();
-        }, 3000);
-    }
-});
+        $("button").click(function () {
+            if ($(this).text() === "Realizar pedido") {
+                $("#mensagem-confirmacao").fadeIn();
+                setTimeout(function () {
+                    $("#mensagem-confirmacao").fadeOut();
+                }, 3000);
+            }
+        });
+
+
+
+
 
     </script>
 
