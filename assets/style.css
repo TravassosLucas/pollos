@@ -338,46 +338,28 @@ section {
     margin-bottom: 20px;
 }
 
-/* Estilo para o botão do carrinho */
-.cart-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 999;
-}
 
-/* Estilo para o painel do carrinho */
-.cart-panel {
-    display: none;
-    position: fixed;
-    top: 50px;
-    right: 20px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-}
-
-/* Estilo para os itens do carrinho */
-#cart-items li {
-    margin-bottom: 10px;
-}
-
-/* Estilo para o botão Finalizar Compra */
-#checkout-btn {
-    display: block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+.btn-carrinho {
+    background-color: gold;
+    padding: 8px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-#checkout-btn:hover {
-    background-color: #0056b3;
+.btn-carrinho:hover {
+    background-color: goldenrod;
+}
+
+/* Adicionei estilos para o carrinho */
+.carrinho {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }

@@ -17,8 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <script src="./script.js"></script>
-
     <title>Los Pollos Hermanos ™</title>
 
 </head>
@@ -46,25 +44,139 @@
 
                 <a href="" class="btn-menu"> COMPRAR </a>
 
+                <button class="btn-carrinho">CARRINHO 🛒</button> <!-- Botão do carrinho -->
+
+
 
             </div><!--menu-->
         </div><!--center-->
 
 
-        <!-- Botão do carrinho no canto superior direito -->
-        <div id="cart-toggle" class="cart-toggle">🛒</div>
-
-        <!-- Elemento do carrinho que aparece quando clicado -->
-        <div id="cart-panel" class="cart-panel">
-            <h2>Carrinho de Compras</h2>
-            <ul id="cart-items"></ul>
-            <div id="cart-total">Total: R$ 0.00</div>
-            <button id="checkout-btn" onclick="checkout()">Finalizar Compra</button>
-        </div>
-
 
 
     </header>
+
+
+
+
+    <div id="carrinho" class="carrinho">
+        <a href="../Loja/loja.html" class="continuar-comprando">Continuar comprando</a>
+        <h1>Carrinho</h1>
+        <ul id="lista"></ul>
+        <h3 id="total"></h3>
+        <button onclick="gerarDocumentoWord()">Realizar pedido</button>
+        <p id="pedido">Pedido gerado com sucesso<button id="sc" onclick="successClose()">❌</button></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Inicialização do carrinho vazio
+            const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            const listaElement = $("#lista"); // Elemento da lista no carrinho
+            const totalElement = $("#total"); // Elemento do total do carrinho
+
+            // Função para exibir o carrinho
+            function exibirCarrinho() {
+                // Limpa o conteúdo atual da lista
+                listaElement.empty();
+                let totalPreco = 0; // Variável para calcular o total do carrinho
+
+                // Itera sobre os itens do carrinho
+                $.each(carrinho, function (index, item) {
+                    // Cria um elemento de lista para cada item
+                    const listItem = $("<li>").text(`${item.descricao} - Preço: $${item.preco.toFixed(2)}`);
+
+                    // Cria um botão de remoção para cada item
+                    const removeButton = $("<button>")
+                        .text("❌")
+                        .css("margin-left", "10px")
+                        .click(function () {
+                            removerItemDoCarrinho(index);
+                        });
+
+                    // Adiciona o botão de remoção à lista
+                    listItem.append(removeButton);
+                    // Adiciona o item à lista
+                    listaElement.append(listItem);
+                    // Adiciona o preço do item ao total
+                    totalPreco += item.preco;
+                });
+
+                // Exibe o total do carrinho
+                totalElement.text(`Total: $${totalPreco.toFixed(2)}`);
+            }
+
+            // Função para remover um item do carrinho
+            function removerItemDoCarrinho(index) {
+                carrinho.splice(index, 1);
+                localStorage.setItem("carrinho", JSON.stringify(carrinho));
+                exibirCarrinho();
+            }
+
+            // Função para gerar o documento do Word com o pedido
+            function gerarDocumentoWord() {
+                const listaElement = document.getElementById("lista");
+                const totalElement = document.getElementById("total");
+                const listaClone = listaElement.cloneNode(true);
+                $(listaClone).find("button").remove();
+                const listaHtml = listaClone.innerHTML;
+                const totalHtml = totalElement.innerHTML;
+                const conteudoHtml = `
+                      <html>
+                          <head>
+                              <meta charset="UTF-8" />
+                          </head>
+                          <body>
+                              <h1>Pedido confirmado</h1>
+                              <h3>Agradecemos sua preferência</h3>
+                              ${listaHtml}
+                              <br><br>
+                              ${totalHtml}
+                          </body>
+                      </html>
+                  `;
+                const blob = new Blob([conteudoHtml], { type: "application/msword" });
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                link.download = "carrinho.doc";
+                link.click();
+                document.getElementById("pedido").style.display = "block";
+            }
+
+            // Função para fechar a mensagem de pedido gerado com sucesso
+            function successClose() {
+                document.getElementById("pedido").style.display = "none";
+            }
+
+            // Adicione um evento de clique aos botões de adicionar ao carrinho
+            const addToCartButtons = $(".botao");
+            addToCartButtons.each(function () {
+                $(this).click(function () {
+                    const descricao = $(this).parent().find('h2').text();
+                    const precoText = $(this).parent().find('.card-price h2').text();
+                    const preco = parseFloat(precoText.replace('R$', '').trim());
+                    const item = {
+                        descricao: descricao,
+                        preco: preco
+                    };
+                    carrinho.push(item);
+                    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+                    exibirCarrinho();
+                });
+            });
+
+            // Exibe o carrinho ao carregar a página
+            exibirCarrinho();
+        });
+
+        $(".btn-carrinho").click(function() {
+            $("#carrinho").toggle(); // Mostra ou esconde o carrinho ao clicar no botão
+        });
+    </script>
+
+
+
 
 
     <section class="banner">
@@ -138,7 +250,7 @@
         <br>
         <div class="videohome">
 
-            <video src="img/los pollos hermanos original ad.mp4" controls autoplay muted autoloop></video>
+            <video src="img/los pollos hermanos original ad.mp4" controls autoplay muted loop></video>
 
         </div>
 
@@ -182,7 +294,7 @@
                 <div class="card-price">
                     <h2>R$ 29,99</h2>
                 </div>
-                <button class="botao" onclick="addItem('Item 1', 10.00)"> 🛒 </button>
+                <button class="botao" onclick="addItem('Item 1', 29.99)"> 🛒 </button>
             </div>
 
             <div class="card">
@@ -326,7 +438,7 @@
 
 
 
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
