@@ -10,6 +10,19 @@
     color: rgb(129, 29, 29)
 }
 
+.custom-font02{
+    font-family: "Caveat", cursive;
+    color: black;
+ 
+}
+
+.mensagem-confirmacao h1{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+
+
 .custom-font01 {
     color: black
 }
@@ -27,7 +40,7 @@ header{
     background-color: white;
     padding: 20px 0 ;
     position: fixed; 
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
     top: 0; 
     width: 100%; 
     background-color: white;
@@ -350,15 +363,17 @@ section {
 
 
 .carrinho {
+    
     display: none;
     position: fixed;
     top: 70px;
     right: 20px;
     background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     z-index: 1000;
+    
 }
 
 .mensagem-confirmacao {
@@ -373,4 +388,39 @@ section {
     border-radius: 5px;
     font-size: 20px;
     z-index: 1000;
+}
+
+.realizar-pedido{
+    background-color: gold;
+    border:none;
+    padding: 2px 10px;
+    border-radius: 5px;
+    margin-top: 9px;
+    font-size: 20px;
+}
+
+.realizar-pedido:hover{
+    background-color: goldenrod;
+
+}
+
+
+.dadofinal{
+    width: 100%;
+    height: 500px;
+    background-color: black;
+    display: flex;
+    margin-top: 25px;
+}
+
+
+
+
+.dadofinal img{ 
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    margin-left: 500px;
+    flex-direction: column;
+    background-color: white;
 }
