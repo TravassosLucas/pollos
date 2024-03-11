@@ -58,8 +58,6 @@ body{
 }
 
 
-
-
 .logo h1{
        color: rgb(129, 29, 29);
 }
@@ -407,20 +405,31 @@ section {
 
 .dadofinal{
     width: 100%;
-    height: 500px;
-    background-color: black;
-    display: flex;
-    margin-top: 25px;
+    height: 250px;
+    background-color: rgb(29, 28, 28);
+    flex-wrap: wrap;
+
 }
 
 
-
-
-.dadofinal img{ 
+.drts{   
     display: flex;
-    align-items: right;
-    justify-content: right;
-    margin-left: 500px;
-    flex-direction: column;
-    background-color: white;
+    justify-content: center;
+    color: white;
+}
+
+.dadofinal h1{ 
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 200px;
+    text-decoration: none;
+    font-weight: normal;
+
+}
+
+.dadofinal img{
+    height: 100px;
+    width: auto;
 }
