@@ -333,8 +333,18 @@ section {
         height: auto; 
     }
     
+    .carrinho {
+        top: 20px; /* Ajusta a posição superior */
+        right: 10px; /* Ajusta a posição direita */
+        max-height: calc(50vh - 100px); /* Define a altura máxima para metade da altura da janela do navegador */
+        width: calc(100% - 40px); /* Define a largura do carrinho para ocupar toda a largura da tela */
+        width: calc(50% - 40px); /* Define a largura do carrinho para metade da largura da tela */
+        max-width: 300px; /* Define a largura máxima */
+    }
+        
+    }
 
-}
+
 
 
 
@@ -375,6 +385,8 @@ section {
     border-radius: 15px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     z-index: 1000;
+    overflow-y: auto; /* Adiciona rolagem vertical quando necessário */
+    
     
 }
 
