@@ -207,6 +207,19 @@ $(document).ready(function() {
             }
         });
 
+        $("button.realizar-pedido").click(function () {
+            $("#mensagem-confirmacao").fadeIn();
+            setTimeout(function () {
+                const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+                let mensagem = "Pedido do Carrinho de Compras:\n";
+                carrinho.forEach(item => {
+                    mensagem += `${item.descricao} - Preço: $${item.preco.toFixed(2)}\n`;
+                });
+                mensagem += `\nTotal: ${$("#total").text()}`;
+                const url = "https://wa.me/995742884?text=" + encodeURIComponent(mensagem);
+                window.location.href = url;
+            }, 3000);
+        });
 
 
 
