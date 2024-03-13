@@ -334,12 +334,12 @@ section {
     }
     
     .carrinho {
-        top: 20px; /* Ajusta a posição superior */
-        right: 10px; /* Ajusta a posição direita */
-        max-height: calc(50vh - 100px); /* Define a altura máxima para metade da altura da janela do navegador */
-        width: calc(100% - 40px); /* Define a largura do carrinho para ocupar toda a largura da tela */
-        width: calc(50% - 40px); /* Define a largura do carrinho para metade da largura da tela */
-        max-width: 300px; /* Define a largura máxima */
+        top: 20px; 
+        right: 10px; 
+        max-height: calc(50vh - 100px); 
+        width: calc(100% - 40px); 
+        width: calc(50% - 40px); 
+        max-width: 300px; 
     }
         
     }
